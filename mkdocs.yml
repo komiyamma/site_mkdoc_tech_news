@@ -11,8 +11,8 @@ extra:
     name: komiyamma.net
     url: https://komiyamma.net/
 site_name: Techニュース｜komiyamma.net
-site_description: AIに関するニュースをまとめています。
-site_url: https://ai-news.komiyamma.net
+site_description: Techに関するニュースをまとめています。
+site_url: https://tech-news.komiyamma.net
 theme:
   name: material
   custom_dir: overrides
