@@ -1,0 +1,109 @@
+:root {
+  --md-typeset-width: 2400px;
+}
+
+@media screen and (min-width: 60rem) {
+  .md-grid {
+    max-width: 2400px;
+  }
+
+  .md-content {
+    max-width: 2400px;
+  }
+}
+
+.md-header__title-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.md-header__title-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.md-header__title-link:hover,
+.md-header__title-link:focus {
+  text-decoration: underline;
+}
+
+.md-header__title-separator {
+  color: inherit;
+}
+/* Home page sections */
+.md-content__inner > h3[id^="ai"] {
+  display: inline-block;
+  margin-top: 2.5rem;
+  margin-bottom: 0.7rem;
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  background-color: #eef2fc;
+  color: #243b75;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.md-content__inner > h3[id^="ai"] + ul {
+  list-style: none;
+  margin: 0 0 2.4rem;
+  padding: 1.5rem 1.75rem;
+  border: 1px solid #dce3f6;
+  border-radius: 18px;
+  background-color: #ffffff;
+  box-shadow: 0 12px 32px rgba(36, 59, 117, 0.08);
+  color: #3f4b6b;
+}
+
+.md-content__inner > h3[id^="ai"] + ul > li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 0.35rem 0.75rem;
+  padding: 1rem 0;
+  border-top: 1px solid #e4eaf7;
+  line-height: 1.6;
+}
+
+.md-content__inner > h3[id^="ai"] + ul > li:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.md-content__inner > h3[id^="ai"] + ul > li:last-child {
+  padding-bottom: 0;
+}
+
+.md-content__inner > h3[id^="ai"] + ul > li > strong {
+  min-width: 6.25rem;
+  color: #1f4ad4;
+  font-weight: 700;
+}
+
+.md-content__inner > h3[id^="ai"] + ul > li > a {
+  color: #243b75;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.md-content__inner > h3[id^="ai"] + ul > li > a:hover,
+.md-content__inner > h3[id^="ai"] + ul > li > a:focus {
+  color: #1f4ad4;
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 768px) {
+  .md-content__inner > h3[id^="ai"] + ul {
+    padding: 1.25rem 1.25rem;
+  }
+
+  .md-content__inner > h3[id^="ai"] + ul > li {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .md-content__inner > h3[id^="ai"] + ul > li > strong {
+    min-width: 0;
+  }
+}
