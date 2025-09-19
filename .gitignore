@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# 仮想環境・パッケージ関連
+.env
+.venv
+venv/
+*.egg-info/
+build/
+dist/
+
+# MkDocs build
+site/
+
+# VSCode
+
+# .vscode フォルダ内の共有したいファイルのみを追跡し、それ以外は無視する
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/settings.json
+# それ以外の .vscode 配下は無視
+.vscode/*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Cloudflare
+.wrangler/
+
+# その他
+*.log
+
+__tmp_codex.py

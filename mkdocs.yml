@@ -1,0 +1,32 @@
+extra:
+  author: komiyamma
+  author_alternate: こみやんま
+  author_sameas:
+    - https://x.com/komiyamma
+    - https://github.com/komiyamma
+  default_image: assets/images/default_ogp.png
+  site_title_primary: Techニュース
+  site_title_separator: ｜
+  parent_site:
+    name: komiyamma.net
+    url: https://komiyamma.net/
+site_name: Techニュース｜komiyamma.net
+site_description: AIに関するニュースをまとめています。
+site_url: https://ai-news.komiyamma.net
+theme:
+  name: material
+  custom_dir: overrides
+plugins:
+  - search:
+      lang:
+        - ja
+        - en
+  - macros:
+      include_dir: macros
+      modules:
+        - macros.home
+      verbose: false
+  - description_from_memo
+  - awesome-pages
+extra_css:
+  - stylesheets/extra.css
