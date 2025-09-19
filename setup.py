@@ -10,6 +10,7 @@ setup(
         "mkdocs.plugins": [
             "description_from_memo = plugins.description_from_memo:Plugin",
             "title_from_filename = plugins.title_from_filename:Plugin",
+            "exclude_docs = plugins.exclude_docs:Plugin",
         ]
     },
     include_package_data=True,

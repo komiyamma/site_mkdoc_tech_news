@@ -28,6 +28,10 @@ plugins:
       verbose: false
   - title_from_filename
   - description_from_memo
+  - exclude_docs:
+      patterns:
+        - AGENTS.md
+        - my_command.md
   - awesome-pages
 extra_css:
   - stylesheets/extra.css
