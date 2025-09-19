@@ -26,6 +26,7 @@ plugins:
       modules:
         - macros.home
       verbose: false
+  - title_from_filename
   - description_from_memo
   - awesome-pages
 extra_css:

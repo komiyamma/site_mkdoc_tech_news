@@ -8,7 +8,8 @@ setup(
     install_requires=["mkdocs"],
     entry_points={
         "mkdocs.plugins": [
-            "description_from_memo = plugins.description_from_memo:Plugin"
+            "description_from_memo = plugins.description_from_memo:Plugin",
+            "title_from_filename = plugins.title_from_filename:Plugin",
         ]
     },
     include_package_data=True,
