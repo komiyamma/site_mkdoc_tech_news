@@ -8,8 +8,8 @@ from pathlib import Path
 
 
 ASCII_THRESHOLD = 128
-MIN_LENGTH = 65.0
-MAX_LENGTH = 80.0
+MIN_LENGTH = 60.0
+MAX_LENGTH = 85.0
 
 
 def weighted_length(text: str) -> float:
