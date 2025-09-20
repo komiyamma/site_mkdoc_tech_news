@@ -44,7 +44,7 @@ def define_env(env):
         page_meta = getattr(page, "meta", {}) or {}
         front_meta, body_lines = load_source(page)
         src_path = getattr(page.file, "abs_src_path", None)
-        memo_lines: List[str] = []
+        memo_summary = ""
         if src_path:
             memo_path = Path(src_path).with_suffix(".memo")
             if memo_path.exists():
@@ -53,7 +53,7 @@ def define_env(env):
                 except OSError as exc:
                     chatter(f"Failed to read memo for {page.file.src_path}: {exc}")
                 else:
-                    memo_lines = [line.strip() for line in raw_memo.splitlines() if line.strip()]
+                    memo_summary = " ".join(line.strip() for line in raw_memo.splitlines() if line.strip())
         raw_date = page_meta.get("date") or front_meta.get("date")
         if raw_date:
             if isinstance(raw_date, datetime):
@@ -83,14 +83,16 @@ def define_env(env):
             title = Path(page.file.src_path).stem
 
         description = page_meta.get("description") or front_meta.get("description") or ""
-        memo_title = memo_lines[0] if memo_lines else ""
-        memo_description = ""
-        if len(memo_lines) > 1:
-            memo_description = " ".join(memo_lines[1:])
-        if memo_title:
-            title = memo_title
-        if not description and memo_description:
-            description = memo_description
+        if not description:
+            for line in body_lines:
+                stripped = line.strip()
+                if stripped.startswith("#"):
+                    candidate = stripped.lstrip("# ").strip()
+                    if candidate:
+                        description = candidate
+                        break
+        if memo_summary:
+            description = memo_summary
         return page_date, title.strip(), description.strip()
 
     def resolve_category_label(page: Page, slug: str) -> str:
