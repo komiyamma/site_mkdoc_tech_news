@@ -33,5 +33,7 @@ plugins:
         - AGENTS.md
         - my_command.md
   - awesome-pages
+hooks:
+  - hooks.py
 extra_css:
   - stylesheets/extra.css
