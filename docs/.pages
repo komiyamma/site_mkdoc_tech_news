@@ -1,12 +1,2 @@
 nav:
   - index.md
-  - Cloudサービス:
-      - path: 2025-cloud-service
-  - C# & .NET:
-      - path: 2025-cs_and_net
-  - MS・Windows:
-      - path: 2025-ms-and-win
-  - React・JS・TS:
-      - path: 2025-react-and-js
-  - Web技術:
-      - path: 2025-web-tech
