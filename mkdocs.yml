@@ -16,6 +16,11 @@ site_url: https://tech-news.komiyamma.net
 theme:
   name: material
   custom_dir: overrides
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.instant
+    - navigation.indexes
 plugins:
   - search:
       lang:
