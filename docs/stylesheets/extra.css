@@ -21,6 +21,7 @@
 .md-header__title-link {
   color: inherit;
   text-decoration: none;
+  font-weight: 700;
 }
 
 .md-header__title-link:hover,
@@ -30,4 +31,91 @@
 
 .md-header__title-separator {
   color: inherit;
+}
+
+/* ページ見出しを太く強調し、装飾ラインを追加 */
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4 {
+  font-weight: 700;
+  line-height: 1.25;
+  position: relative;
+  color: var(--md-default-fg-color);
+}
+
+.md-typeset h1 {
+  font-size: clamp(2.75rem, 2.5vw + 2rem, 3.5rem);
+  border-left: 0.6rem solid var(--md-primary-fg-color);
+  padding-left: 1.5rem;
+  padding-bottom: 1rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.md-typeset h1::after {
+  content: "";
+  display: block;
+  height: 0.35rem;
+  width: min(12rem, 45%);
+  margin-top: 0.75rem;
+  background: linear-gradient(90deg, var(--md-primary-fg-color), var(--md-accent-fg-color));
+  border-radius: 999px;
+}
+
+.md-typeset h2 {
+  font-size: clamp(2.1rem, 1.8vw + 1.6rem, 2.75rem);
+  border-left: 0.45rem solid var(--md-primary-fg-color);
+  padding-left: 1.25rem;
+  padding-bottom: 0.8rem;
+  margin-top: 2.25rem;
+  margin-bottom: 1.4rem;
+}
+
+.md-typeset h2::after {
+  content: "";
+  display: block;
+  height: 0.3rem;
+  width: min(10rem, 40%);
+  margin-top: 0.65rem;
+  background: linear-gradient(90deg, var(--md-primary-fg-color), var(--md-accent-fg-color));
+  border-radius: 999px;
+}
+
+.md-typeset h3 {
+  font-size: clamp(1.7rem, 1.4vw + 1.3rem, 2.3rem);
+  border-left: 0.35rem solid var(--md-accent-fg-color);
+  padding-left: 1rem;
+  padding-bottom: 0.6rem;
+  margin-top: 2rem;
+  margin-bottom: 1.2rem;
+}
+
+.md-typeset h3::after {
+  content: "";
+  display: block;
+  height: 0.25rem;
+  width: min(8rem, 35%);
+  margin-top: 0.5rem;
+  background: linear-gradient(90deg, var(--md-accent-fg-color), transparent);
+  border-radius: 999px;
+}
+
+.md-typeset h4 {
+  font-size: clamp(1.45rem, 1vw + 1.1rem, 1.9rem);
+  border-left: 0.25rem solid var(--md-accent-fg-color);
+  padding-left: 0.85rem;
+  padding-bottom: 0.45rem;
+  margin-top: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+.md-typeset h4::after {
+  content: "";
+  display: block;
+  height: 0.18rem;
+  width: min(6rem, 30%);
+  margin-top: 0.45rem;
+  background: linear-gradient(90deg, var(--md-accent-fg-color), rgba(0, 0, 0, 0));
+  border-radius: 999px;
 }
