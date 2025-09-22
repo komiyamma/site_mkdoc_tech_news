@@ -40,7 +40,7 @@ def define_env(env):
         body_lines = lines[body_start:]
         return front_meta, body_lines
 
-    def extract_page_info(page: Page) -> Tuple[Optional[datetime], str, str]:
+    def extract_page_info(page: Page) -> Tuple[Optional[datetime], str, str, bool]:
         page_meta = getattr(page, "meta", {}) or {}
         front_meta, body_lines = load_source(page)
         src_path = getattr(page.file, "abs_src_path", None)
@@ -54,6 +54,7 @@ def define_env(env):
                     chatter(f"Failed to read memo for {page.file.src_path}: {exc}")
                 else:
                     memo_summary = " ".join(line.strip() for line in raw_memo.splitlines() if line.strip())
+        has_memo = bool(memo_summary)
         raw_date = page_meta.get("date") or front_meta.get("date")
         if raw_date:
             if isinstance(raw_date, datetime):
@@ -93,7 +94,7 @@ def define_env(env):
                         break
         if memo_summary:
             description = memo_summary
-        return page_date, title.strip(), description.strip()
+        return page_date, title.strip(), description.strip(), has_memo
 
     def resolve_category_label(page: Page, slug: str) -> str:
         if page.ancestors:
@@ -116,14 +117,14 @@ def define_env(env):
 
     def iter_dated_pages(pages: Iterable[Page]):
         for page in pages:
-            page_date, title, description = extract_page_info(page)
+            page_date, title, description, has_memo = extract_page_info(page)
             if page_date is None:
                 continue
-            yield page_date, title, description, page
+            yield page_date, title, description, page, has_memo
 
     def collect_entries(navigation: Navigation):
         entries = []
-        for page_date, title, description, page in iter_dated_pages(navigation.pages):
+        for page_date, title, description, page, has_memo in iter_dated_pages(navigation.pages):
             src_uri = getattr(page.file, "src_uri", "")
             if not src_uri:
                 continue
@@ -136,9 +137,22 @@ def define_env(env):
                 "url": src_uri,
                 "category_slug": category_slug,
                 "category_label": category_label,
+                "has_memo": has_memo,
             })
         entries.sort(key=lambda item: item["date"], reverse=True)
         return entries
+
+    def build_entry_line(entry: Dict) -> str:
+        date_text = entry["date"].strftime("%Y-%m-%d")
+        line = f"- [{date_text}]({entry['url']})"
+        if entry.get("has_memo") and entry["description"]:
+            desc = " ".join(entry["description"].split())
+            if len(desc) > 120:
+                desc = desc[:117].rstrip() + "..."
+            line += f" - {desc}"
+        elif entry["title"]:
+            line += f" - {entry['title']}"
+        return line
 
     @env.macro
     def latest_pages(limit: int = 5):
@@ -148,18 +162,12 @@ def define_env(env):
             return ""
         entries = collect_entries(navigation)
         seen = set()
-        rows = []
+        rows: List[str] = []
         for entry in entries:
             if entry["url"] in seen:
                 continue
             seen.add(entry["url"])
-            line = f"- **{entry['date'].strftime('%Y-%m-%d')}** | [{entry['title']}]({entry['url']})"
-            if entry["description"]:
-                desc = " ".join(entry["description"].split())
-                if len(desc) > 120:
-                    desc = desc[:117].rstrip() + "..."
-                line += f" - {desc}"
-            rows.append(line)
+            rows.append(build_entry_line(entry))
             if len(rows) >= limit:
                 break
         return "\n".join(rows)
@@ -171,7 +179,7 @@ def define_env(env):
             chatter("No navigation available yet")
             return ""
         entries = collect_entries(navigation)
-        categories = {}
+        categories: Dict[str, Dict[str, object]] = {}
         for entry in entries:
             slug = entry["category_slug"]
             bucket = categories.setdefault(slug, {
@@ -192,16 +200,10 @@ def define_env(env):
         )
         if max_categories is not None:
             ordered_categories = ordered_categories[:max_categories]
-        sections = []
+        sections: List[str] = []
         for data in ordered_categories:
             lines = [f"### {data['label']}", ""]
             for item in data["items"]:
-                line = f"- **{item['date'].strftime('%Y-%m-%d')}** | [{item['title']}]({item['url']})"
-                if item["description"]:
-                    desc = " ".join(item["description"].split())
-                    if len(desc) > 120:
-                        desc = desc[:117].rstrip() + "..."
-                    line += f" - {desc}"
-                lines.append(line)
+                lines.append(build_entry_line(item))
             sections.append("\n".join(lines))
         return "\n\n".join(sections)
