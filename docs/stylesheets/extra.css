@@ -45,7 +45,7 @@
 }
 
 .md-typeset h1 {
-  font-size: clamp(2.75rem, 2.5vw + 2rem, 3.5rem);
+  font-size: clamp(2.1rem, 1.6vw + 1.5rem, 2.6rem);
   border-left: 0.6rem solid var(--md-primary-fg-color);
   padding-left: 1.5rem;
   padding-bottom: 1rem;
@@ -64,7 +64,7 @@
 }
 
 .md-typeset h2 {
-  font-size: clamp(2.1rem, 1.8vw + 1.6rem, 2.75rem);
+  font-size: clamp(1.75rem, 1.3vw + 1.25rem, 2.2rem);
   border-left: 0.45rem solid var(--md-primary-fg-color);
   padding-left: 1.25rem;
   padding-bottom: 0.8rem;
@@ -83,7 +83,7 @@
 }
 
 .md-typeset h3 {
-  font-size: clamp(1.7rem, 1.4vw + 1.3rem, 2.3rem);
+  font-size: clamp(1.55rem, 1.2vw + 1.15rem, 2rem);
   border-left: 0.35rem solid var(--md-accent-fg-color);
   padding-left: 1rem;
   padding-bottom: 0.6rem;
@@ -102,7 +102,7 @@
 }
 
 .md-typeset h4 {
-  font-size: clamp(1.45rem, 1vw + 1.1rem, 1.9rem);
+  font-size: clamp(1.3rem, 0.85vw + 1rem, 1.6rem);
   border-left: 0.25rem solid var(--md-accent-fg-color);
   padding-left: 0.85rem;
   padding-bottom: 0.45rem;
@@ -119,3 +119,5 @@
   background: linear-gradient(90deg, var(--md-accent-fg-color), rgba(0, 0, 0, 0));
   border-radius: 999px;
 }
+
+
