@@ -1,4 +1,5 @@
-# site_mkdoc_tech_news
+# tech-news.komiyamma.net
+
 
 [![GitHub release](https://img.shields.io/github/v/release/komiyamma/site_mkdoc_tech_news)](https://github.com/komiyamma/site_mkdoc_tech_news/releases)
 
