@@ -37,6 +37,8 @@ plugins:
       patterns:
         - AGENTS.md
         - my_command.md
+        - gemini_command.md
+        - gemini.md
   - awesome-pages
 hooks:
   - hooks.py
