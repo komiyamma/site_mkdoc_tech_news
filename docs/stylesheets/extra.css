@@ -1,5 +1,6 @@
 :root {
   --md-typeset-width: 2400px;
+  --md-primary-fg-color: #336CA6;
 }
 
 @media screen and (min-width: 60rem) {
@@ -125,6 +126,5 @@
 .md-header {
   background-color: #336CA6;
 }
-
 
 
