@@ -1,6 +1,5 @@
 :root {
   --md-typeset-width: 2400px;
-  --md-primary-fg-color: #336CA6;
 }
 
 @media screen and (min-width: 60rem) {
@@ -120,11 +119,3 @@
   background: linear-gradient(90deg, var(--md-accent-fg-color), rgba(0, 0, 0, 0));
   border-radius: 999px;
 }
-
-
-
-.md-header {
-  background-color: #336CA6;
-}
-
-
