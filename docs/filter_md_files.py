@@ -1,18 +1,28 @@
-import os
 
-def get_md_files_to_process(root_dir):
-    md_files_to_process = []
-    for dirpath, _, filenames in os.walk(root_dir):
-        for filename in filenames:
-            if filename.endswith(".md"):
-                md_file_path = os.path.join(dirpath, filename)
-                memo_file_path = md_file_path.replace(".md", ".memo")
-                if not os.path.exists(memo_file_path):
-                    md_files_to_process.append(md_file_path)
-    return md_files_to_process
+import os
+import sys
+
+def filter_md_files(base_dir):
+    """
+    Finds all .md files in base_dir and its subdirectories that do not have a corresponding .memo file.
+    Returns a list of absolute paths to these .md files.
+    """
+    target_md_files = []
+    for root, _, files in os.walk(base_dir):
+        for file in files:
+            if file.endswith(".md"):
+                md_path = os.path.join(root, file)
+                memo_path = os.path.join(root, file.replace(".md", ".memo"))
+                if not os.path.exists(memo_path):
+                    target_md_files.append(md_path)
+    return target_md_files
 
 if __name__ == "__main__":
-    docs_dir = r"G:\repogitory\site_mkdoc_ai_news\docs"
-    files = get_md_files_to_process(docs_dir)
-    for f in files:
+    if len(sys.argv) < 2:
+        print("Usage: python filter_md_files.py <base_directory>")
+        sys.exit(1)
+
+    base_directory = sys.argv[1]
+    files_to_process = filter_md_files(base_directory)
+    for f in files_to_process:
         print(f)
