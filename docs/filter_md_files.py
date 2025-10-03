@@ -18,11 +18,10 @@ def filter_md_files(base_dir):
     return target_md_files
 
 if __name__ == "__main__":
-    if len(sys.argv) < 2:
-        print("Usage: python filter_md_files.py <base_directory>")
-        sys.exit(1)
-
-    base_directory = sys.argv[1]
+    base_directory = os.getcwd()
+    output_file = os.path.join(base_directory, "filtered_md_files.txt")
     files_to_process = filter_md_files(base_directory)
-    for f in files_to_process:
-        print(f)
+    with open(output_file, "w", encoding="utf-8") as f:
+        for md_file in files_to_process:
+            f.write(md_file + "\n")
+    print(f"Filtered MD files written to: {output_file}")
