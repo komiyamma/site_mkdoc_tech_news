@@ -95,7 +95,7 @@
             "@type": "ListItem",
             "position": {{ loop.index + 1 }},
             "name": "{{ nav_item.title }}",
-            "item": "{{ nav_item.canonical_url }}"
+            "item": "{{ nav_item.canonical_url or page_url }}"
           }
           {% endfor %}
           {% if not page.is_homepage %}
@@ -131,3 +131,4 @@
     </script>
   {% endif %}
 {% endblock %}
+
