@@ -1,0 +1,1 @@
+React Compiler 1.0が安定版となり、ReactはReact Foundationへ移管。React 19.2で新コンポーネントとフックが導入され、React Native 0.82は新アーキテクチャへ移行。TypeScriptでは高度なパターンやEffectTS v4が注目され、JavaScriptではWASM 3.0やnpmパッケージのセキュリティが話題。
