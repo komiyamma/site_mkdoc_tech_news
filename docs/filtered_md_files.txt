@@ -1,0 +1,5 @@
+G:\repogitory\site_mkdoc_tech_news\docs\2025-cloud-service\2025-10-26.md
+G:\repogitory\site_mkdoc_tech_news\docs\2025-cs_and_net\2025-10-26.md
+G:\repogitory\site_mkdoc_tech_news\docs\2025-ms-and-win\2025-10-26.md
+G:\repogitory\site_mkdoc_tech_news\docs\2025-react-and-js\2025-10-26.md
+G:\repogitory\site_mkdoc_tech_news\docs\2025-web-tech\2025-10-26.md
