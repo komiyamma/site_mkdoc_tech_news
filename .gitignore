@@ -35,3 +35,5 @@ Thumbs.db
 *.log
 
 __tmp_codex.py
+# Temporary MkDocs directory
+_tmp_mkdocs_awesome/
