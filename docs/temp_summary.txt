@@ -1,1 +1,0 @@
-FirebaseはData Connect機能強化とRemote Configカスタムシグナル対応。VercelはDrains機能リリースと新価格プラン発表。CloudflareはWAFルール更新とfine grained permissions公開ベータ。SupabaseはSeries Eで1億ドル調達しAIバックエンド強化。AzureはNetwork Security HubとSQL hub統合がGA。
