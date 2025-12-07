@@ -1,0 +1,1 @@
+TypeScript 7.0のネイティブ化による高速化やNext.js 16のリリースが発表された一方で、React Server Componentsに重大なRCE脆弱性が発見され、注意喚起された。
