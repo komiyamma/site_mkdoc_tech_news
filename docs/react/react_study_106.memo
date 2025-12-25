@@ -1,0 +1,1 @@
+コンポーネントが`ref`をPropsとして受け取る際のTypeScript型定義として、`ComponentPropsWithRef`を活用する方法を解説。
