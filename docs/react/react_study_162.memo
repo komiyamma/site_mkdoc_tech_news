@@ -1,0 +1,1 @@
+TanStack Queryを導入し、useQueryを使ってデータ取得、ローディング、エラー状態を簡単に管理する方法と、QueryClientProviderの設定方法を学んだ。

@@ -1,0 +1,1 @@
+useWindowSizeを作成し、useEffectを用いたイベントリスナーの適切な登録・解除と、useStateによるウィンドウサイズ管理の実践的実装を行った。

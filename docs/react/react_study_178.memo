@@ -1,0 +1,1 @@
+persistミドルウェアを使ってストアの状態をlocalStorageに永続化し、partializeやmigrateを用いた高度な保存設定の方法を学んだ。
