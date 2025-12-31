@@ -1,1 +1,0 @@
-TypeScriptのtypeとinterfaceの違いと使い分けを解説。ReactのProps定義には柔軟なtypeを推奨し、拡張性が必要な場合のinterface活用法を学ぶ。

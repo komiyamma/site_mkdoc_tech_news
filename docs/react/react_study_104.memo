@@ -1,1 +1,0 @@
-`useLayoutEffect`内で`getBoundingClientRect`を使用し、要素のサイズを正確に計測してStateに反映する実装手法を解説。

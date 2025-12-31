@@ -1,1 +1,0 @@
-renderでコンポーネントをテスト用DOMに描画し、screenオブジェクトを使って要素を検索・検証するReact Testing Libraryの基本的なテスト手法を習得した。

@@ -1,1 +1,0 @@
-JSONPlaceholderを対象にuseとSuspenseを用いたデータ取得アプリを作成し、外部でのPromise定義や型安全性、スタイリングを含む実践的な実装を行った。

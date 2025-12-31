@@ -1,1 +1,0 @@
-whileHoverやwhileTapでボタン等に触感フィードバックを追加し、useReducedMotionでアクセシビリティにも配慮した心地よいUI操作を実装した。
