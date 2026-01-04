@@ -1,0 +1,1 @@
+Server Actionsを用いてTODOアプリに編集・削除機能を追加し、useActionStateによる状態管理や二重送信防止を含むCRUD実装の完全な流れを学ぶ章。
