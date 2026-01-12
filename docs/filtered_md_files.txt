@@ -1,6 +1,0 @@
-G:\repogitory\site_mkdoc_tech_news\docs\2025-cloud-service\2026-01-11.md
-G:\repogitory\site_mkdoc_tech_news\docs\2025-cs_and_net\2026-01-11.md
-G:\repogitory\site_mkdoc_tech_news\docs\2025-ms-and-win\2026-01-11.md
-G:\repogitory\site_mkdoc_tech_news\docs\2025-react-and-js\2026-01-11.md
-G:\repogitory\site_mkdoc_tech_news\docs\2025-web-tech\2026-01-11.md
-G:\repogitory\site_mkdoc_tech_news\docs\2025-web-trendy-tech\2026-01-11.md
