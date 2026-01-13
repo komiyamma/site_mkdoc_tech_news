@@ -24,6 +24,8 @@ site/
 # それ以外の .vscode 配下は無視
 .vscode/*
 
+.vs/*
+
 # OS
 .DS_Store
 Thumbs.db
