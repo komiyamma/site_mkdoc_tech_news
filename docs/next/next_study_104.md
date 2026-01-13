@@ -1,4 +1,4 @@
-# 第104章：ミニ課題：エラーに強い“記事ビューア”完成🏁📰✨
+# 第104章：ミニ課題：エラーに強い“記事ビューア”完成🏁
 
 この章は「ローディング⏳」「エラー🧯」「404🚪」をぜんぶ揃えた、“優しい記事ビューア”を作ってゴールする回だよ〜😊💕
 
@@ -18,18 +18,20 @@
 
 ## 完成イメージ（フォルダ構成）🗺️📦
 
+![完成イメージ（フォルダ構成）](./picture/next_study_104_resilient_viewer.png)
+
 ```mermaid
 flowchart LR
-  A[app/] --> B[articles/]
-  B --> C[page.tsx\n一覧]
-  B --> D[loading.tsx\n一覧ローディング]
-  B --> E[[id]/]
-  E --> F[page.tsx\n詳細]
-  E --> G[loading.tsx\n詳細ローディング]
-  E --> H[error.tsx\n詳細エラー]
-  E --> I[not-found.tsx\n詳細404]
-  A --> J[lib/]
-  J --> K[articles.ts\nデータ取得]
+  A["app/"] --> B["articles/"]
+  B --> C["page.tsx<br>一覧"]
+  B --> D["loading.tsx<br>一覧ローディング"]
+  B --> E["[id]/"]
+  E --> F["page.tsx<br>詳細"]
+  E --> G["loading.tsx<br>詳細ローディング"]
+  E --> H["error.tsx<br>詳細エラー"]
+  E --> I["not-found.tsx<br>詳細404"]
+  A --> J["lib/"]
+  J --> K["articles.ts<br>データ取得"]
 ```
 
 ---
@@ -121,9 +123,10 @@ import { fetchArticleList } from '../lib/articles'
 export default async function ArticlesPage({
   searchParams,
 }: {
-  searchParams?: { fail?: string }
+  searchParams: Promise<{ fail?: string }>
 }) {
-  const fail = searchParams?.fail === '1'
+  const { fail: failStr } = await searchParams
+  const fail = failStr === '1'
 
   const articles = await fetchArticleList({ fail })
 
@@ -211,13 +214,15 @@ export default async function ArticlePage({
   params,
   searchParams,
 }: {
-  params: { id: string }
-  searchParams?: { fail?: string }
+  params: Promise<{ id: string }>
+  searchParams: Promise<{ fail?: string }>
 }) {
-  const id = Number(params.id)
+  const { id: rawId } = await params;
+  const id = Number(rawId)
   if (!Number.isFinite(id)) notFound()
 
-  const fail = searchParams?.fail === '1'
+  const { fail: failStr } = await searchParams;
+  const fail = failStr === '1'
   const article = await fetchArticleById(id, { fail })
 
   if (!article) {
@@ -278,6 +283,8 @@ export default function Loading() {
 ---
 
 ## 5) 詳細のエラー画面🧯（`[id]/error.tsx`）＋再試行🔁
+
+![Error Boundary Shield](./picture/next_study_104_error_boundary.png)
 
 `app/articles/[id]/error.tsx`
 
@@ -374,13 +381,13 @@ export default function NotFound() {
 
 ```mermaid
 flowchart TD
-  A[ユーザーが /articles/3 を開く📱] --> B[読み込み開始⏳]
-  B --> C[loading.tsx が表示される⏳✨]
-  C --> D{fetch 成功？}
-  D -->|成功🎉| E[記事を表示📝]
-  D -->|失敗💥| F[error.tsx が表示🧯]
-  F --> G[「もう一回」ボタン🔁]
-  G --> H[reset() で再レンダリング✨]
+  A["ユーザーが /articles/3 を開く📱"] --> B["読み込み開始⏳"]
+  B --> C["loading.tsx が表示される⏳✨"]
+  C --> D{"fetch 成功？"}
+  D -->|"成功🎉"| E["記事を表示📝"]
+  D -->|"失敗💥"| F["error.tsx が表示🧯"]
+  F --> G["「もう一回」ボタン🔁"]
+  G --> H["reset() で再レンダリング✨"]
   H --> D
 ```
 

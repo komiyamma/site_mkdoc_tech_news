@@ -1,4 +1,4 @@
-# 第127章：セキュリティ：直接叩かれる前提で守る🛡️💥
+# 第127章：セキュリティ：直接叩かれる前提で守る🛡️
 
 Webアプリってね、**画面（UI）からだけ使われる**…と思いがちだけど、実は違うんだよ〜😳
 **APIやページは「直接アクセスされる前提」**で作るのが超大事！🔐✨
@@ -17,6 +17,8 @@ Webアプリってね、**画面（UI）からだけ使われる**…と思い�
 ---
 
 ## 2) イメージ図：UIの外からも来る🚪⚠️（図解）
+
+![イメージ図](./picture/next_study_127_direct_attack.png)
 
 ```mermaid
 flowchart LR
@@ -69,7 +71,8 @@ import { NextResponse } from "next/server";
 
 export async function GET() {
   // 例：cookieに session=1 があったらログイン扱い（学習用）
-  const session = cookies().get("session")?.value;
+  const cookieStore = await cookies();
+  const session = cookieStore.get("session")?.value;
 
   if (!session) {
     return NextResponse.json(

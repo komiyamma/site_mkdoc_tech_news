@@ -1,4 +1,4 @@
-# 第100章：エラーログ方針：consoleだけで終わらせない📌😵‍💫➡️🧠✨
+# 第100章：エラーログ方針：consoleだけで終わらせない📌
 
 この章では、「エラーが起きた！」のあとに **ちゃんと追えるログ** を残せるようになるのがゴールだよ〜！🫶
 **“とりあえず console.error()” で終わらせない** のがポイントです📌✨
@@ -62,16 +62,18 @@ console は便利！でも **それだけ**だと、こうなりがち👇
 
 ## 図解：ログが集まる流れ📨➡️🧠➡️🗃️
 
+![ログが集まる流れ](./picture/next_study_100_error_logging.png)
+
 ```mermaid
 flowchart TD
-  A[ユーザー操作] --> B{エラー発生}
-  B -->|Client側| C[error.tsx / try-catch]
-  B -->|Server側| D[Route Handler / Server Action / Server Component]
-  C --> E[reportError() で /api/client-error にPOST]
-  D --> F[serverLogError() で構造化ログ出力]
-  E --> G[サーバーで console.error(JSON) に集約]
+  A["ユーザー操作"] --> B{"エラー発生"}
+  B -->|"Client側"| C["error.tsx / try-catch"]
+  B -->|"Server側"| D["Route Handler / Server Action / Server Component"]
+  C --> E["reportError() で /api/client-error にPOST"]
+  D --> F["serverLogError() で構造化ログ出力"]
+  E --> G["サーバーで console.error(JSON) に集約"]
   F --> G
-  G --> H[本番: ログ管理/監視サービスへ送る（将来）]
+  G --> H["本番: ログ管理/監視サービスへ送る（将来）"]
 ```
 
 ---
@@ -84,6 +86,9 @@ flowchart TD
 ---
 
 ### 1) 受け口を作る：Route Handler（API）🚪📦
+
+![Log Payload](./picture/next_study_100_log_payload.png)
+
 
 `app/api/client-error/route.ts` を作るよ！
 

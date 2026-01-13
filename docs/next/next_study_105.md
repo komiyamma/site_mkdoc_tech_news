@@ -43,13 +43,15 @@ Route Handlerは `app` の中で、**`route.ts`（または `route.js`）** と�
 
 ## 4) ざっくり全体の流れ（図）🗺️✨
 
+![ざっくり全体の流れ](./picture/next_study_105_route_handler_intro.png)
+
 「ブラウザ（またはアプリ）から /api/xxx を叩く」→「route.tsが返す」って流れです📨
 
 ```mermaid
 flowchart LR
-  A[Browser / Frontend] --> B["/api/hello にアクセス"]
+  A["Browser / Frontend"] --> B["/api/hello にアクセス"]
   B --> C["app/api/hello/route.ts"]
-  C --> D[Response(JSON / Text)]
+  C --> D["Response(JSON / Text)"]
   D --> A
 ```
 

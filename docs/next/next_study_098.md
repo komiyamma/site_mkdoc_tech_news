@@ -1,4 +1,4 @@
-# 第98章：練習：一覧は先に表示、詳細だけ遅れて表示📰⏳✨
+# 第98章：練習：一覧は先に表示、詳細だけ遅れて表示📰
 
 この章では、**「一覧はすぐ見える」けど「詳細だけ少し遅れて出る」**を作ります😊
 Next.js（App Router）の **Streaming + Suspense** の気持ちよさを体験しよ〜！🌊🫧
@@ -22,6 +22,8 @@ Next.js（App Router）の **Streaming + Suspense** の気持ちよさを体験�
 ---
 
 ## 図でイメージ（Streamingの流れ）🌊
+
+![Streamingの流れ](./picture/next_study_098_streaming.png)
 
 ```mermaid
 sequenceDiagram
@@ -154,14 +156,15 @@ import PostDetail from "./PostDetail"
 import DetailSkeleton from "./DetailSkeleton"
 
 type PageProps = {
-  searchParams?: { id?: string }
+  searchParams: Promise<{ id?: string }>
 }
 
 export default async function Page({ searchParams }: PageProps) {
   const posts = await fetchPosts()
 
+  const { id } = await searchParams
   const firstId = posts[0]?.id ?? 1
-  const selectedId = Number(searchParams?.id ?? firstId)
+  const selectedId = Number(id ?? firstId)
 
   return (
     <main className={styles.main}>

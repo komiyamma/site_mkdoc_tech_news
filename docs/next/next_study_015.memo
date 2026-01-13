@@ -1,0 +1,1 @@
+tsconfig.jsonの役割と主要項目を解説。includeやcompilerOptions、Next.js専用プラグインを整理し、VS Codeでの設定や型チェックの仕組みを初心者向けに紹介。

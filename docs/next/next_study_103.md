@@ -1,4 +1,4 @@
-# 第103章：復習：ロード/エラー/404の3点セットを固定化📦✨
+# 第103章：復習：ロード/エラー/404の3点セットを固定化📦
 
 この章は「どのページでも迷わず同じ品質で出せる」ように、
 **ロード（loading）・エラー（error）・404（not-found）** を “型” にして固めちゃいます😊🧩
@@ -24,6 +24,8 @@
 ---
 
 ## どこに置くの？ “区間（セグメント）” で効くよ🧠🗺️
+
+![3点セット](./picture/next_study_103_route_segments.png)
 
 App Router では、フォルダごとに「区間」があります📁
 その区間に loading / error / not-found を置くと、**その区間以下**に効きます✨
@@ -233,18 +235,21 @@ export default async function ArticleDetailPage({
   params,
   searchParams,
 }: {
-  params: { id: string };
-  searchParams: { boom?: string };
+  params: Promise<{ id: string }>;
+  searchParams: Promise<{ boom?: string }>;
 }) {
   // ローディング確認用にちょい待つ
   await sleep(800);
 
+  const { boom } = await searchParams;
+
   // エラー確認用（/articles/1?boom=1 でわざと落とす）
-  if (searchParams.boom === "1") {
+  if (boom === "1") {
     throw new Error("わざとエラー！🧨");
   }
 
-  const article = articles.find((a) => a.id === params.id);
+  const { id } = await params;
+  const article = articles.find((a) => a.id === id);
 
   if (!article) {
     notFound();

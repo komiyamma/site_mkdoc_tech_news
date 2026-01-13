@@ -1,4 +1,4 @@
-# 第150章：ミニ課題：編集・削除にもActionsを広げる✏️🗑️✨
+# 第150章：ミニ課題：編集・削除にもActionsを広げる✏️🗑️
 
 今回は、**Server Actionsで「編集」「削除」まで**できるようにして、TODOを「ちゃんとCRUDっぽく」仕上げるよ〜！🥳💪
 （※DBはまだ入れない想定なので、今回は**メモリ保存**で学習します🧠✨）
@@ -15,6 +15,8 @@
 ---
 
 ## 全体の流れ（図解）🧭✨
+
+![Edit Delete Actions](./picture/next_study_150_edit_delete.png)
 
 ```mermaid
 sequenceDiagram
@@ -290,6 +292,9 @@ export default function SubmitButton({
 ---
 
 ## 6) 各TODOの「編集＆削除」UIを作る✏️🗑️✨（ここが本題！）
+
+![UI State Toggle](./picture/next_study_150_ui_state.png)
+
 
 **`app/todos/_components/TodoItem.tsx`**
 
