@@ -1,1 +1,1 @@
-Server Components環境下でのContext APIの適切な利用法を解説。Client Providerを用いた橋渡しにより、必要な範囲で状態共有を実現する。
+Server ComponentsでのContext API利用法を解説。Client Providerによる橋渡しで、必要な範囲での状態共有を実現する。

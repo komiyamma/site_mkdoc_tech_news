@@ -1,1 +1,1 @@
-ESLintの役割と重要性を解説。バグ防止や専用ルール、npm run lintでのチェック、最新のFlat Config形式を整理。実例を図解し、初心者向けに活用法を紹介。
+ESLintの役割と重要性、バグ防止や専用ルール、Flat Config形式を整理。npm run lintでのチェックや実例図解で活用法を紹介。
