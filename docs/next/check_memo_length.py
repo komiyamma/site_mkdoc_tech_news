@@ -9,8 +9,7 @@ def check_length():
             content = file.read().strip()
             length = len(content)
             if not (65 <= length <= 80):
-                print(f"FAIL: {f.replace('.memo', '')}")
-                print(f"Length: {length} (Expected 65-80)")
+                print(f"FAIL: {f.replace('.memo', '')} (Len: {length})")
                 failed = True
     
     if failed:

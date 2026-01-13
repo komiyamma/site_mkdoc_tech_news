@@ -1,1 +1,1 @@
-Server ComponentsとClient Componentsの役割を解説。サーバー側の利点や"use client"の境界、両者の組み合わせ方を、図解やミニ実装を交えて分かりやすく紹介。
+Server ComponentsとClient Componentsの違いや境界線を理解し、サーバー側の利点を活かした適切な使い分けと実装パターンを学ぶ。
