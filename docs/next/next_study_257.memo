@@ -1,1 +1,1 @@
-Route HandlersとServer Actionsによる状態更新手法を比較解説。fetchとform actionの使い分けや画面更新のベストプラクティスを学ぶ。
+Route HandlersとServer Actionsの状態更新を比較。fetchとform actionの使い分けや画面更新の定石を学ぶ。
