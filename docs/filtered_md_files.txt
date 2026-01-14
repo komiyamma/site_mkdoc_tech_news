@@ -1,6 +1,3 @@
-G:\repogitory\site_mkdoc_tech_news\docs\solid_cs\solid_cs_study_019.md
-G:\repogitory\site_mkdoc_tech_news\docs\solid_cs\solid_cs_study_020.md
-G:\repogitory\site_mkdoc_tech_news\docs\solid_cs\solid_cs_study_021.md
 G:\repogitory\site_mkdoc_tech_news\docs\solid_cs\solid_cs_study_022.md
 G:\repogitory\site_mkdoc_tech_news\docs\solid_cs\solid_cs_study_023.md
 G:\repogitory\site_mkdoc_tech_news\docs\solid_cs\solid_cs_study_024.md
