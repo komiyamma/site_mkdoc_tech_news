@@ -1,1 +1,0 @@
-第21章はISPの分割テクニック。Read/Write分離、Query/Command分離などの手法や、TypeScriptの型機能を活用し、依存関係を軽量化する方法を学ぶ。
