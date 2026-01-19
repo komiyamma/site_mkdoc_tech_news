@@ -1,0 +1,1 @@
+例外とResult型の使い分けを詳説。QueryはNotFoundを例外とせずnullを返し、Commandは業務エラーをResult型で返却する指針を提示。例外境界での一括処理手法も解説。
