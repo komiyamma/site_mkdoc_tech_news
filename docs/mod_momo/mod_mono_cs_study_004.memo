@@ -1,0 +1,1 @@
+関心の分離(SoC)の基礎を解説。UI、Application、Domain、Infrastructureに責務を分け、特にドメイン層にはルールを集約しI/Oを混入させない重要性を学ぶ。
