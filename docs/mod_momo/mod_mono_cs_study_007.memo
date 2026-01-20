@@ -1,1 +1,0 @@
-モジュール内部のレイヤー構造（Domain、Application、Infrastructure）を解説。各層の責務とコードの配置ルールを定義し、関心の分離を実践する手法を学ぶ。
