@@ -1,1 +1,0 @@
-C# 14対応。Nullable参照型を用い、nullを境界に限定し内部を安全にする設計を解説。意思表示と警告を味方に、NullReferenceExceptionを防ぐ堅牢なモデル構築を学ぶ。
