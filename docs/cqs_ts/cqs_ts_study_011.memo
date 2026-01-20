@@ -1,1 +1,0 @@
-非同期処理でも不変なCQS原則を解説。Promiseのvoid（Command）とT（Query）の使い分け、fetchの基本、Command後にQueryで再取得する黄金パターンを学ぶ第11章。
