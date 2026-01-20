@@ -8,7 +8,9 @@ def filter_md_files(base_dir):
     Returns a list of absolute paths to these .md files.
     """
     target_md_files = []
-    for root, _, files in os.walk(base_dir):
+    for root, dirs, files in os.walk(base_dir):
+        # Modify dirs in-place to skip directories starting with '.'
+        dirs[:] = [d for d in dirs if not d.startswith('.')]
         for file in files:
             if file.endswith(".md"):
                 md_path = os.path.join(root, file)
