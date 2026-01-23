@@ -1,5 +1,5 @@
-for /L %%i in (1,1,3) do (
-  echo [%%i/3] gemini 実行中...
+for /L %%i in (1,1,2) do (
+  echo [%%i/2] gemini 実行中...
   gemini -y -p "gemini_command.md を実行してください。"
-  echo [%%i/3] 終了コード=%errorlevel%
+  echo [%%i/2] 終了コード=%errorlevel%
 )
