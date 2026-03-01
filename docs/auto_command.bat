@@ -17,3 +17,4 @@ gemini --yolo --prompt "@gemini_command.mdの内容を実行して。画面には進捗以外の情
 
 REM qwen --yolo exec "@gemini_command.mdの内容を実行して。画面には進捗以外の情報が出す必要はありません。最後にこのリポジトリに対して、適切なコミットメッセージとともに全てコミット＆プッシュしてください。"
 
+exit
