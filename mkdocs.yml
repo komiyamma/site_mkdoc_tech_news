@@ -13,6 +13,10 @@ extra:
 site_name: Techニュース｜komiyamma.net
 site_description: Techに関するニュースをまとめています。
 site_url: https://tech-news.komiyamma.net
+markdown_extensions:
+  - mdx_truly_sane_lists:
+      nested_indent: 3
+      truly_sane: true
 theme:
   name: material
   custom_dir: overrides
