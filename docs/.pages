@@ -1,20 +1,20 @@
 nav:
   - index.md
   - MS・Windows:
-      - path: 2026-ms-and-win
-      - path: 2025-ms-and-win
+      - 2026-ms-and-win
+      - 2025-ms-and-win
   - C# & .NET:
-      - path: 2026-cs_and_net
-      - path: 2025-cs_and_net
+      - 2026-cs_and_net
+      - 2025-cs_and_net
   - Cloudサービス:
-      - path: 2026-cloud-service
-      - path: 2025-cloud-service
+      - 2026-cloud-service
+      - 2025-cloud-service
   - React・JS・TS:
-      - path: 2026-react-and-js
-      - path: 2025-react-and-js
+      - 2026-react-and-js
+      - 2025-react-and-js
   - Web技術:
-      - path: 2026-web-tech
-      - path: 2025-web-tech
+      - 2026-web-tech
+      - 2025-web-tech
   - Webトレンド技術:
-      - path: 2026-web-trendy-tech
-      - path: 2025-web-trendy-tech
+      - 2026-web-trendy-tech
+      - 2025-web-trendy-tech
