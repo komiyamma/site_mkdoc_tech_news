@@ -1,1 +1,1 @@
-FirebaseのSQL対応やNext.js適応、Cloudflareの可視化、Supabaseの地域ブロック対応、AzureのSQL改善まで、主要クラウド各社の今週の更新を横断整理した要約。
+FirebaseのApp Hosting改善やData ConnectのネイティブSQL化に加え、Vercelの課金可視化、CloudflareのWorkflows図示化とDynamic Workersが進み、基盤運用は実用化した。
