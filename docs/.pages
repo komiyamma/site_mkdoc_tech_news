@@ -3,6 +3,8 @@ nav:
   - MS・Windows:
       - path: 2026-ms-and-win
       - path: 2025-ms-and-win
+  - Apple・Mac:
+      - path: 2026-apple-and-mac
   - C# & .NET:
       - path: 2026-cs_and_net
       - path: 2025-cs_and_net
